@@ -1,7 +1,7 @@
 defmodule Ranges do
 
   def test() do
-    case File.read("sample.txt") do
+    case File.read("day5.csv") do
       {:ok, fileRead} -> {seeds, maps} = parse(fileRead)
                           Enum.min(transform(seeds, maps))
     end
@@ -16,7 +16,7 @@ defmodule Ranges do
     maps = Enum.map(maps, fn(row) ->
     [_|eachMap] = String.split(row, "\n")
     eachMap = Enum.map(eachMap, fn(map) -> String.split(map, " ") end)
-    eachMap = Enum.map(eachMap, fn(l) ->  Enum.map(l, fn(x) ->  {nr, _} = Integer.parse(x); nr end)end)
+    Enum.map(eachMap, fn(l) ->  Enum.map(l, fn(x) ->  {nr, _} = Integer.parse(x); nr end)end)
     end)
     {seeds, maps}
    end
