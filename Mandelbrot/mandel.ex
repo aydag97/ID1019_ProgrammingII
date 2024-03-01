@@ -7,4 +7,18 @@ defmodule Mandel do
     rows(width, height, trans, depth, [])
   end
 
+  defp rows(_, 0, _, _, rowsList) do rowsList end
+  defp rows(width, height, operation, depth, rowsList) do
+    row = row(width, height, operation, depth, [])
+    rows(width, height - 1, operation, depth, [row|rowsList])
+  end
+
+  defp row(0, _, _, _, rowList) do rowList end
+  defp row(width, height, operation, depth, rowList) do
+    complexNumber = operation.(width, height)
+    dep = Brot.mandelbrot(complexNumber, depth)
+    converted = Color.convert(dep, depth)
+    row(width - 1, height, operation, depth, [converted|rowList])
+  end
+
 end
