@@ -4,18 +4,14 @@ defmodule Complex do
     {r, i}
   end
 
-  def add(a, b) do
-    {r1, i1} = a
-    {r2, i2} = b
+  def add({r1, i1}, {r2, i2}) do
     {r1+r2, i1+i2}
   end
-  def sqr(a) do
-    {r, i} = a
+  def sqr({r, i}) do
     {(r*r) - (i*i), 2 * r * i}
   end
 
-  def abs(a) do
-    {r, i} = a
+  def abs({r, i}) do
     :math.sqrt((r*r) + (i*i))
   end
 end

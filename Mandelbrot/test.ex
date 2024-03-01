@@ -3,12 +3,12 @@ defmodule Test do
   def demo() do
     # large 1
     # large(-0.73, 0.12, 1.2)
-    
+
     # large 2
     # large(-0.5577, -0.6099, -0.5)
 
     # large 3
-    # large(-0.35, -0.4599, -2)
+    # large(-1.1, -0.25, -2.1)
 
     # the complete mandelbrot
     small(-2.6, 1.2, 1.2)

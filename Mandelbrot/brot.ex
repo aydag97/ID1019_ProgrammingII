@@ -10,10 +10,10 @@ defmodule Brot do
   def test(i, zi, c, m) do
     # den håller på att ständigt bygga på tuppler och sära dem för att tillslut representera en komplex tal
     # dethär tar tid förstås
-    a = Complex.abs(zi)
+    z = Complex.abs(zi)
     cond do
-      a > 2 -> i
-      a <= 2 ->
+      z > 2 -> i
+      z <= 2 ->
         znext = Complex.add(Complex.sqr(zi), c)
         test(i+1, znext, c, m)
     end
