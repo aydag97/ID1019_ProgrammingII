@@ -2,21 +2,21 @@ defmodule MorseCode do
 
   def test1() do
     tree = tree()
-    signal = base()
+    signal = rolled()
     decoded = decode(signal, tree)
-    decoded
+    IO.inspect(decoded)
   end
 
   def test2() do
     tree = tree()
-    text = 'ayda'
+    text = 'ayda ghalkhanbaz'
     map = encode_table(tree)
     encoded = encode(text, map)
     :io.format("\nEncoded:\n")
     IO.inspect(encoded)
     decoded = decode(encoded, tree)
     :io.format("\nDecoded:\n")
-    IO.puts(decoded)
+    IO.inspect(decoded)
   end
 
 def decode(signal, tree) do decode(signal, tree, tree) end
